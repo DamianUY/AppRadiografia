@@ -1,0 +1,86 @@
+$colours: (
+  black: #000,
+  yellow: #ff0
+);
+
+@each $name, $value in $colours {
+  .#{$name} {
+    background-color: $value;
+  }
+}
+
+$base-size: 150px;
+
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+}
+
+.center-contents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#pen {
+  @extend .center-contents;
+  height: 100%;
+}
+
+.base {
+  width: $base-size;
+  height: $base-size;
+}
+
+.background {
+  @extend .center-contents;
+  @extend .base;
+  position: relative;
+  border-radius: 50%;
+}
+
+.circle {
+  width: $base-size / 7;
+  height: $base-size / 7;
+  border-radius: 50%;
+}
+
+$cone-height: $base-size * 0.35;
+$cone-width: $base-size * 0.33;
+.cone {
+  position: absolute;
+  width: $cone-width;
+  height: $cone-height;
+  clip-path: polygon(200% 60%, 0% 15%, 0% 100%);
+
+  &.right {
+    top: 30px;
+    right: 7px;
+    transform: rotate(155deg) translateX(5px) translateY(-5px);
+  }
+  &.bottom {
+    bottom: 5px;
+    transform: rotate(270deg) translateX(5px) translateY(-5px);
+  }
+  &.left {
+    top: 30px;
+    left: 7px;
+    transform: rotate(25deg) translateX(5px) translateY(-5px);
+  }
+}
+
+// .cone::before, 
+// .cone::after {
+//   content: "";
+//   background-color: #000;
+//   position: absolute;
+//   width: 15px;
+//   height: $cone-height;
+// }
+// .cone::before {
+//   transform: rotate(348deg) translateX(-5px) translateY(0px);
+// }
+// .cone::after {
+//   transform: rotate(12deg) translateX($cone-width - 5px) translateY(-5px);
+// }
