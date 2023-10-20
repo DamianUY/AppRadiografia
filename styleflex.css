@@ -13,11 +13,11 @@
     font-weight: normal;
   }
 
-html {
+/*html {
 
     background: rgb(174,255,254);
 
-}
+}*/
 
 
 h1 {
@@ -233,9 +233,81 @@ li{
 }
 
 
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider {
+  flex: 1;
+  overflow: hidden;
+}
+
+.slider img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.slider-button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+#prevBtn {
+  left: 10px;
+}
+
+#nextBtn {
+  right: 10px;
+}
 
 
 
 
+html {
+	background: linear-gradient(-45deg, #ee7752, #8fc735, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 200s ease infinite;
+	height: 100vh;
+}
 
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
 
+/* CSS for responsive layout */
+.flexbox2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.FotoPosicion {
+  flex: 1; /* Allow the image to take up available space equally */
+  max-width: 100%; /* Ensure the image doesn't exceed its parent's width */
+}
+
+.FotoPosicion img {
+  width: 100%; /* Make the image fill the entire width of its parent */
+  height: auto; /* Maintain the image's aspect ratio */
+}

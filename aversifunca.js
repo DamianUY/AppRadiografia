@@ -8,6 +8,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuDesplegable = document.getElementById('menuDesplegable');
   const infoContainer = document.getElementById('infoContainer');
   const recuadritos = document.getElementsByClassName('redirigir');
+
+////////////////////
+const sliderImage = document.getElementById('sliderImage');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+let currentIndex = 0;
+const photos = [];
+////////////////  //
   
   // Function to populate the select box
   function populatemenuDesplegable(autos) {
@@ -37,12 +45,15 @@ document.addEventListener('DOMContentLoaded', () => {
 	displayInfo(null); // Clear info when filtering options
   }
   
+ 
+
   // Function to display information of the selected option
   function displayInfo(selectedTitulo) {
 	infoContainer.innerHTML = '';
 	if (selectedTitulo) {
 	  const selectedAuto = autos.find(auto => auto.titulo === selectedTitulo);
 	  if (selectedAuto) {
+		photos.push(...selectedAuto.image.map(imagePath => `img/${imagePath}`));
 		const infoDiv = document.createElement('div');
 		infoDiv.innerHTML = `<div>
 		<h1> ${selectedAuto.titulo} </h1>
@@ -95,25 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	
 	</div>
 	
-	<div class="FotoRadio" >
 	
-	<img src="FotosRadio/radio.png">
-	
-	</div>
-	
-	</div>
-	
-	<div class="carrousel">
-	<div class="grande">
-	<img src="FotosGaleria/wallpapersden.com_nessa-pokemon-sword-and-shield_3840x2160.jpg" alt="Imagen 1" class="img">
-	<img src="FotosGaleria/thumb-1920-1082389.png" alt="Imagen 2" class="img">
-	<img src="FotosGaleria/shrek.jpg" alt="Imagen 3" class="img">
-	</div>
-	<ul class="puntos">
-	<li class="punto"></li>
-	<li class="punto"></li>
-	<li class="punto"></li>
-	</ul>
 	</div>
 	
 		
@@ -125,8 +118,39 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
+// Function to show the current image
+function showImage(index) {
+	if (photos[index]) {
+	  sliderImage.src = photos[index];
+	} else {
+	  console.error(`Image not found at index ${index}`);
+	}
+  }
+  
+  // Initial image display
+  showImage(currentIndex);
+  
+  // Event listener for the previous button
+  prevBtn.addEventListener('click', () => {
+	currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+	showImage(currentIndex);
+  });
+  
+  // Event listener for the next button
+  nextBtn.addEventListener('click', () => {
+	currentIndex = (currentIndex + 1) % photos.length;
+	showImage(currentIndex);
+  });
+  
+  // Handle window resize to keep the image responsive
+  window.addEventListener('resize', () => {
+	showImage(currentIndex);
+  });
+  
 
-	
+
+
+
 		  
   
   // Attach an event listener to the search input
@@ -155,7 +179,4 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
   }
 
-  
- 
 
-	

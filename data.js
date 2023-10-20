@@ -8,16 +8,17 @@ const autos = [	{
             "criteriocal": "<li>El área entre la parte superior de C3 y T2 y las partes blandas circundantes.</li><li>Las sombras de la mandíbula y el occipital superpuestas al atlas y a la mayor parte del axis.</li><li>Los espacios discales intervertebrales abiertos.</li><li>Las apóﬁsis espinosas equidistantes a los pedículos y alineadas con la línea media de los cuerposvertebrales.</li><li>Los ángulos mandibulares y las apóﬁsis mastoides equidistantes a las vértebras.</li><li>Los espacios abiertos de los discos intervertebrales, señalan correcta angulación.</li>",
             "patologia":"Fractura de cavador de arcilla, fracturas por compresión, hernia del núcleo pulposo.",
             "restodedatos":"<p class='listadatos'><b>SID:</b> 1m</p><p class='listadatos'><b>Receptor de imagen:</b> 18x24cm en longitudinal respecto al eje mayor de la región.</p><p class='listadatos'><b>Tecnica:</b> Homogeneizada.</p><p class='listadatos'><b>Bucky:</b> Si</p><p class='listadatos'><b>Respiración/movimiento:</b> Suspendida</p>",       
-            "image": "img/prod50921_1.jpg"
+            "image": ["img/maxresdefault.jpg", "img/teaserbox_11795760.jpg"]
         },
         {
-            "titulo":"holiwi",
-            "subtitulo": "Frenteuwu Axial",
+            "titulo":"aloha",
+            "subtitulo": "Frente Axial",
         },
 
         {
             "titulo":"vapaiiiii",
-            "subtitulo": "owo Axial",
+            "subtitulo": "axial Axial",
         }
        
     ]
+

@@ -1,0 +1,122 @@
+html {
+	background: linear-gradient(-45deg, #ee7752, #8fc735, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 200s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.boton1 {
+    background-image: url('FotosRadio/radio.jpg');
+}
+
+.boton2 {
+    background-image: url('FotosRadio/reso.png');
+}
+.boton3 {
+    background-image: url('FotosRadio/tomo.jpg');
+}
+.boton4 {
+    background-image: url('FotosRadio/fluoro.jpg');
+}
+
+.button {
+    width: 200px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 25px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fc0303be;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .button-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .button {
+        width: 100%;
+    }
+}
+
+#searchInput {
+    margin-top: 30px;
+    width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    outline: none;
+}
+
+/* Center the list items within the dropdown and the new list container */
+.hidden-dropdown {
+    display: none;
+    position: absolute;
+    background: #fff;
+    border: 1px solid #ccc;
+    z-index: 1;
+    max-height: 300px;
+    overflow-y: auto;
+    width: 100%; /* Make the dropdown as wide as the search input */
+    top: 100%; /* Position dropdown just below the search input */
+}
+
+#searchResults {
+    padding: 10px;
+}
+
+#listContainer { /* New container div for list items */
+    display: flex;
+    justify-content: center; /* Center list items horizontally */
+    margin-top: 10px; /* Adjust the margin as needed */
+}
+#searchList {
+    list-style-type: none;
+    padding: 0;
+    text-align: center; /* Center list items horizontally */
+}
+
+#dropdown {
+    background-color: #ee7752;
+    margin-left: 7em;
+    margin-right: 7em;
+}
