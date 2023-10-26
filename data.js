@@ -1,6 +1,5 @@
 const autos = [	{
-            "titulo": "Columna Cervical",
-            "subtitulo": "Frente AP Axial",
+            "titulo": "Columna Cervical - Frente AP Axial",
             "posicionpac": "Se coloca al paciente en posición de decúbito supino o bipedestación con la espalda apoyada contra el soporte del RI. Se ajustan los hombros para que queden en el mismo plano horizontal con el fin de evitar la rotación.",
             "posicionreg": "Se centra el plano medio sagital del cuerpo del paciente sobre la línea media de la mesa o del dispositivo de rejilla vertical.	Se extiende la barbilla lo suﬁciente como para que el plano de oclusión quede perpendicular a la superﬁcie de la mesa. Con ello se evita la superposición de la mandíbula sobre las vértebras cervicales medias. Se proporciona apoyo para la cabeza de cualquier paciente que presente una curvatura lordótica pronunciada. Con este apoyo se ayuda a compensar la curvatura y se reduce la distorsión de la imagen. Se centra el RI a la altura del C4. Se ajusta la cabeza de forma que el plano medio sagital esté en línea recta y perpendicular al RI.",
             "regioninclu": "La imagen resultante muestra los cinco cuerpos vertebrales cervicales inferiores y los dos o tres primeros torácicos, los espacios entre los pedículos, las apóﬁsis transversas y articulares superpuestas y los espacios intervertebrales discales. Esta proyección también se usa para demostrar la presencia o ausencia de costillas cervicales.",
@@ -12,12 +11,10 @@ const autos = [	{
         },
         {
             "titulo":"aloha",
-            "subtitulo": "Frente Axial",
         },
 
         {
             "titulo":"vapaiiiii",
-            "subtitulo": "axial Axial",
         }
        
     ]

@@ -2,36 +2,23 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="js/javascript.js"></script>
 	<script src="js/caru.js"></script>
 	<link rel="stylesheet" type="text/css" href="styleflex.css">
+	<link rel="stylesheet" type="text/css" href="css/BarraBusquedaINFO.css">
 	<meta charset="utf-8">
 	<title>Columna</title>
 </head>
 
 
 <body>
-
-	<header>
-
-	<div id="contenedorheader">
-		<div id="ctn-icon-search">
-			<i class="fa-solid fa-magnifying-glass" id="iconobusqueda"></i>
-
+<header>
+	<div id="barraymenu ">
+		<div class="CajaBusqueda">
+			<input type="text" id="searchInput" placeholder="Buscar">
+			<ul id="menuDesplegable" style="list-style-type: none"></ul>
 		</div>
 	</div>
-		
-	</header>
-
-
-	<div id="CajadeBusqueda">
-		<input type="text" id="searchInput" placeholder="Buscar...">
-	</div>
-
-	<ul id="menuDesplegable">
-    </ul>
-
-
+</header>
 
 
 	<div id="infoContainer">
@@ -39,14 +26,14 @@
 	</div>
 
 	<div class="slider-container">
-		<button id="prevBtn" class="slider-button">Previous</button>
+		<button id="prevBtn" class="slider-button">Previa</button>
 		<div class="slider">
 		  <img id="sliderImage" src="" alt="Slider Image">
 		</div>
-		<button id="nextBtn" class="slider-button">Next</button>
+		<button id="nextBtn" class="slider-button">Siguiente</button>
 	  </div>
 	  
-
+	
 	<script src="aversifunca.js"></script>
 	<script src="data.js"></script>
 

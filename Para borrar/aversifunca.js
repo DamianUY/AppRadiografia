@@ -1,52 +1,12 @@
-const searchInput = document.getElementById('searchInput');
-const menuDesplegable = document.getElementById('menuDesplegable');
-const recuadritos = document.getElementsByClassName('redirigir');
-
 document.addEventListener('DOMContentLoaded', () => {
-	const urlParams = new URLSearchParams(window.location.search);
-    const selectedItem = urlParams.get('selectedItem');
-	if (selectedItem) {
-        // Display the information for the selected item
-        displayInfo(selectedItem);
-    }
-	searchInput.addEventListener('input', () => {
-		const searchTerm = searchInput.value.toLowerCase();
-		
-		if (searchTerm === '') {
-			menuDesplegable.style.display = 'none';
-		} else {
-			menuDesplegable.style.display = 'block';
-		}
-		
-		const filteredResults = autos.filter(item =>
-			item.titulo.toLowerCase().includes(searchTerm)
-		);
+	populatemenuDesplegable(autos);
 	
-		displaySearchResults(filteredResults);
-	});
-	
-	
-	function displaySearchResults(results) {
-		menuDesplegable.innerHTML = '';
-	
-		results.forEach(item => {
-			const listItem = document.createElement('li');
-			listItem.className = 'redirigir';
-			listItem.textContent = `${item.titulo}`;
+  });
 
-			listItem.addEventListener('click', () => {
-				displayInfo(item.titulo);
-			 });
-
-			menuDesplegable.appendChild(listItem);
-		});
-
-	};
-});
-
- 
+  const searchInput = document.getElementById('searchInput');
+  const menuDesplegable = document.getElementById('menuDesplegable');
   const infoContainer = document.getElementById('infoContainer');
- 
+  const recuadritos = document.getElementsByClassName('redirigir');
 
 //////////////////////////////////DEL CARRUSEL
 const sliderImage = document.getElementById('sliderImage');
@@ -56,6 +16,35 @@ let currentIndex = 0;
 const photos = [];
 /////////////////////////////////
 
+  
+  // Function to populate the select box
+  function populatemenuDesplegable(autos) {
+	menuDesplegable.innerHTML = ''; // Clear the previous menu items
+	autos.forEach(auto => {
+	  const listaElement = document.createElement('li');
+	  listaElement.className = 'redirigir';
+	  listaElement.textContent = auto.titulo;
+	  // Attach a click event listener to each listaElement
+	  listaElement.addEventListener('click', () => {
+		displayInfo(auto.titulo); // Pass the clicked item's title to the displayInfo function
+	  });
+  
+	  menuDesplegable.appendChild(listaElement);
+	});
+  }
+  
+
+  // Function to filter options based on search input
+  function filterOptions() {
+	const searchTerm = searchInput.value.toLowerCase();
+	const filteredOptions = autos.filter(auto =>
+	  auto.titulo.toLowerCase().includes(searchTerm)
+	);
+	populatemenuDesplegable(filteredOptions);
+	displayInfo(null); // Clear info when filtering options
+  }
+  
+ 
 
   //////////////////////////////////////////////////MOSTRAR LOS DATOS BUSCADOS
   function displayInfo(selectedTitulo) {
@@ -63,13 +52,12 @@ const photos = [];
 	if (selectedTitulo) {
 	  const selectedAuto = autos.find(auto => auto.titulo === selectedTitulo);
 	  if (selectedAuto) {
-		photos.length = 0;
 		photos.push(...selectedAuto.image.map(imagePath => `img/${imagePath}`));
-		showImage(currentIndex);
 		const infoDiv = document.createElement('div');
 		infoDiv.innerHTML = `<div>
 		<h1> ${selectedAuto.titulo} </h1>
 	
+		<h2>${selectedAuto.subtitulo}</h2>
 	</div>
 	
 	<div class="datosprincipales"><button class="boton"><b>Posición de paciente</b></button>
@@ -163,6 +151,8 @@ function showImage(index) {
 
 /////////////////////////////////////////////////////////////////////////////////////
 
+  // Attach an event listener to the search input
+  searchInput.addEventListener('keyup', filterOptions);
 
 ///////////////////////////////////////PARA CERRAR Y ABRIR LAS PESTAÑITAS
   function botoncerrar() {
@@ -187,3 +177,5 @@ function showImage(index) {
 	  
 	});
   }
+
+

@@ -87,16 +87,36 @@ body {
     outline: none;
 }
 
-#searchList {
-    width: 290px; /* Same width as the search bar */
-    margin: 0 auto; /* Center horizontally */
-    text-align: center; /* Center the list items text within the list */
-    background-color: rgba(247, 184, 184, 0.521);
-    padding: 0; /* Remove any default padding/margin on the ul element */
+/* Center the list items within the dropdown and the new list container */
+.hidden-dropdown {
+    display: none;
+    position: absolute;
+    background: #fff;
+    border: 1px solid #ccc;
+    z-index: 1;
+    max-height: 300px;
+    overflow-y: auto;
+    width: 100%; /* Make the dropdown as wide as the search input */
+    top: 100%; /* Position dropdown just below the search input */
 }
 
-#searchList li {
-    padding: 5px;
-    display: block; /* Ensure list items are displayed as blocks */
-    text-align: center; /* Center the text inside the list items */
+#searchResults {
+    padding: 10px;
+}
+
+#listContainer { /* New container div for list items */
+    display: flex;
+    justify-content: center; /* Center list items horizontally */
+    margin-top: 10px; /* Adjust the margin as needed */
+}
+#searchList {
+    list-style-type: none;
+    padding: 0;
+    text-align: center; /* Center list items horizontally */
+}
+
+#dropdown {
+    background-color: #ee7752;
+    margin-left: 7em;
+    margin-right: 7em;
 }

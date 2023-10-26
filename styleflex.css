@@ -240,17 +240,20 @@ li{
   max-width: 100%;
   overflow: hidden;
   position: relative;
+  height: 300px; /* Adjust the height to your desired value */
 }
 
 .slider {
   flex: 1;
   overflow: hidden;
+  text-align: center; /* Center align the images */
 }
 
 .slider img {
-  max-width: 100%;
+  max-height: 100%; /* Maintain the aspect ratio while fitting the height to the container */
+  max-width: 100%;  /* Maintain the aspect ratio while fitting the width to the container */
   height: auto;
-  display: block;
+  display: inline-block; /* Display images as inline-block for centering */
 }
 
 .slider-button {
